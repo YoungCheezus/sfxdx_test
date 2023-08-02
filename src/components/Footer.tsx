@@ -2,24 +2,25 @@ import React from "react";
 import {styled} from "styled-components";
 import Logo from "./Logo";
 import Link from "./Link";
+import { FACEBOOK_ICON, INSTAGRAM_ICON, TWITTER_ICON, YOUTUBE_ICON } from "../constants/icons";
 
 
 const Footer = () => {
   return (
     <AppFooter>
       <FooterMain>
-        <Link />
+        {/*<Link />*/}
         <LinksFooter>
-          <Link text={'Privacy Policy'} url={'https://google.com'} />
-          <Link text={'Terms & Conditions'} url={'https://google.com'} />
-          <Link text={'Cookie Policy'} url={'https://google.com'} />
+          <Link url={'https://google.com'}>Privacy Policy</Link>
+          <Link url={'https://google.com'}>Terms & Conditions</Link>
+          <Link url={'https://google.com'}>Cookie Policy</Link>
         </LinksFooter>
         <Logo />
         <SocialLinks>
-          <Link img={'facebook.svg'} />
-          <Link img={'twitter.svg'} />
-          <Link img={'youtube.svg'} />
-          <Link img={'instagram.svg'} />
+          <Link url={'https://google.com'}><img src={FACEBOOK_ICON} alt=""/></Link>
+          <Link url={'https://google.com'}><img src={TWITTER_ICON} alt=""/></Link>
+          <Link url={'https://google.com'}><img src={YOUTUBE_ICON} alt=""/></Link>
+          <Link url={'https://google.com'}><img src={INSTAGRAM_ICON} alt=""/></Link>
         </SocialLinks>
       </FooterMain>
       <Copyright>

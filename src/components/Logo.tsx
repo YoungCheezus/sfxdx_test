@@ -1,10 +1,10 @@
 import React from "react";
-import styled from "styled-components";
+import { LOGO_ICON } from "../constants/icons";
 
 const Logo = () => {
   return (
     <>
-      <img src="/logo.svg" alt="" />
+      <img src={LOGO_ICON} alt="" />
     </>
   );
 };

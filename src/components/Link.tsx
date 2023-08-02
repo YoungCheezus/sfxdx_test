@@ -3,20 +3,18 @@ import {styled} from "styled-components";
 
 
 export interface ILink {
-  text?: string;
   url?: string;
-  img?: string;
-  type?: string;
   onClick?: Promise<any>;
+  children: string | JSX.Element | JSX.Element[]
 }
 
 
-const Link = ({text, url, img, type}: ILink) => {
+const Link = ({url, children}: ILink) => {
   return (
     <>
       {
-        img &&
-        <a
+        children &&
+        <StyledLink
           href={url && url}
           target={'_blank'}
           style={{
@@ -24,14 +22,9 @@ const Link = ({text, url, img, type}: ILink) => {
             alignItems: "center"
           }}
         >
-          <img src={img} alt={''} />
-        </a>
+          { children }
+        </StyledLink>
       }
-
-      {
-        text && <StyledLink href={url && url} type={type}> { text } </StyledLink>
-      }
-
     </>
   );
 }
@@ -41,6 +34,7 @@ export default Link;
 export const StyledLink = styled.a`
   color: #676767;
   font-size: 16px;
+  text-decoration: none;
   &:hover {
     cursor:pointer;
   }

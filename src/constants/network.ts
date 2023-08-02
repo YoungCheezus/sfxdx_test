@@ -4,9 +4,9 @@ export const GOERLI_NETWORK: Network = {
   id: 5,
   name: "Goerli"
 }
-export const ETHEREUM_NET_ID: Network = {
+export const ETHEREUM_NETWORK: Network = {
   id: 1,
   name: "Ethereum"
 }
 
-export const NETWORKS:Network[] = [GOERLI_NETWORK, ETHEREUM_NET_ID]
+export const NETWORKS:Network[] = [GOERLI_NETWORK, ETHEREUM_NETWORK]

@@ -12,6 +12,8 @@ import {getNetworkName} from "../helpers/utils";
 
 const Header = () => {
   const { chainId } = useSelectorTyped(state => state.user);
+  const { user } = useSelectorTyped(state => state.user);
+
   const dispatch = useAppDispatch();
 
   if (window.ethereum) {
@@ -39,10 +41,10 @@ const Header = () => {
     <AppHeader>
       <Logo />
       <StyledConnectBlock>
-        <ConnectBtn />
+        <ConnectBtn user={ user } />
 
         {
-          chainId !== GOERLI_NETWORK.id &&
+          (chainId !== GOERLI_NETWORK.id && user) &&
           <StyledBtn
             onClick={(e) => changeNetwork(e, GOERLI_NETWORK.id)}>
             Switch to Goerli
@@ -50,7 +52,6 @@ const Header = () => {
 
         }
       </StyledConnectBlock>
-
     </AppHeader>
   );
 }

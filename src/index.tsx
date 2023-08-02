@@ -6,14 +6,6 @@ import {Provider} from "react-redux";
 import {store} from "./store";
 import {theme} from "./themes"
 
-// export const theme = {
-//   colors: {},
-//   media: {
-//     phone: "(max-width: 425px)",
-//     tablet: "(max-width: 768px) and (min-width: 425px)"
-//   }
-// }
-
 const Global = createGlobalStyle`
   * {
     margin: 0;
@@ -21,7 +13,6 @@ const Global = createGlobalStyle`
     box-sizing: border-box;
   }
 `;
-
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

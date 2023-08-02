@@ -6,9 +6,12 @@ import {useSelectorTyped} from "../hooks/useSelectorTyped";
 import {setUser} from "../store/action-creators/user";
 import { useActions } from "../hooks/useActions";
 
-const ConnectBtn: React.FC = () => {
+interface ConnectBtn {
+  user?: string
+}
+
+const ConnectBtn: React.FC<ConnectBtn> = ({ user }: ConnectBtn ) => {
   const { setUser } = useActions();
-  const { user } = useSelectorTyped(state => state.user);
 
   const getUserName = useMemo(() => {
     if (user) {
