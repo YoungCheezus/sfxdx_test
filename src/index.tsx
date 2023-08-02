@@ -1,19 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import styled,{ createGlobalStyle, ThemeProvider } from "styled-components";
+import {Provider} from "react-redux";
+import {store} from "./store";
+import {theme} from "./themes"
+
+// export const theme = {
+//   colors: {},
+//   media: {
+//     phone: "(max-width: 425px)",
+//     tablet: "(max-width: 768px) and (min-width: 425px)"
+//   }
+// }
+
+const Global = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+`;
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+root.render(
+  <ThemeProvider theme={theme}>
+    <Provider store={store}>
+      <Global />
+      <App />
+    </Provider>
+  </ThemeProvider>
+
+);
